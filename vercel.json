@@ -37,11 +37,5 @@
         }
       ]
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/assets/:file(avatar\\.png|mascot\\.png)",
-      "destination": "https://raw.githubusercontent.com/developerchunk/DuoSages-web/main/assets/:file"
-    }
   ]
 }
