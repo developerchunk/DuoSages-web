@@ -1,0 +1,210 @@
+/* DuoSages legal pages. The app's almanac palette: parchment, forest ink, antique gold. */
+
+:root {
+  --page: #f2ebda;
+  --surface: #faf5e8;
+  --surface2: #eae1cb;
+  --ink: #24422f;
+  --ink-soft: #3a5643;
+  --muted: #6e6248;
+  --hairline: rgba(36, 66, 47, 0.14);
+  --gold: #b3873e;
+  --gold-ink: #7f5c1f;
+  --blush: #c4553d;
+  --night: #1e2440;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0e1912;
+    --surface: #152218;
+    --surface2: #1d2c20;
+    --ink: #f0e8d4;
+    --ink-soft: #d8cfb8;
+    --muted: #a39c85;
+    --hairline: rgba(240, 232, 212, 0.14);
+    --gold: #c9a45c;
+    --gold-ink: #c9a45c;
+    --blush: #d06a52;
+    --night: #101a14;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink-soft);
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+a { color: var(--gold-ink); text-underline-offset: 3px; }
+a:hover { color: var(--ink); }
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header.site {
+  border-bottom: 1px solid var(--hairline);
+}
+
+header.site .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.brand img { width: 36px; height: 36px; border-radius: 50%; }
+
+nav.site {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+nav.site a { color: var(--muted); text-decoration: none; }
+nav.site a[aria-current="page"], nav.site a:hover { color: var(--ink); }
+
+main { padding: 40px 0 64px; }
+
+.eyebrow {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-ink);
+  margin: 0 0 8px;
+}
+
+h1, h2, h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+h1 { font-size: clamp(30px, 6vw, 42px); margin: 0 0 12px; }
+h2 { font-size: 24px; margin: 44px 0 10px; }
+h3 { font-size: 19px; margin: 28px 0 6px; }
+
+p, li { margin: 0 0 14px; }
+ul, ol { padding-left: 22px; margin: 0 0 14px; }
+li { margin-bottom: 8px; }
+
+.updated {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+.lede { font-size: 20px; color: var(--ink); }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 22px 0;
+}
+
+.card.gold { border-color: var(--gold); }
+.card > :last-child { margin-bottom: 0; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin: 28px 0;
+}
+
+.cards a.card {
+  display: block;
+  margin: 0;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease;
+}
+
+.cards a.card:hover { border-color: var(--gold); }
+.cards a.card h2 { margin: 0 0 6px; font-size: 21px; }
+.cards a.card p { margin: 0; font-size: 16px; color: var(--muted); }
+
+.button {
+  display: inline-block;
+  background: var(--gold);
+  color: #24422f;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  padding: 13px 22px;
+  border-radius: 12px;
+}
+
+.button:hover { color: #24422f; filter: brightness(1.05); }
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 8px;
+}
+
+.hero img { width: 120px; height: 120px; flex: none; }
+
+@media (max-width: 560px) {
+  body { font-size: 17px; }
+  header.site .wrap { flex-wrap: wrap; gap: 10px; }
+  nav.site { width: 100%; gap: 6px 16px; font-size: 12px; }
+  .hero { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .hero img { width: 96px; height: 96px; }
+}
+
+footer.site {
+  border-top: 1px solid var(--hairline);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+footer.site .wrap {
+  padding-top: 22px;
+  padding-bottom: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 20px;
+}
+
+footer.site a { color: var(--muted); }
